@@ -1,0 +1,5 @@
+- if flash.any?
+  - user_facing_flashes.each do |key, value|
+    %div.alert.alert-dismissable{:class => "alert-#{flash_class(key)}"}
+      %button.close{"data-dismiss" => 'alert'}x
+      = value

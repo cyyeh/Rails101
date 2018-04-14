@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'jquery-rails' # if using rails5.1+, bootstrap needs this gem
 gem 'bootstrap-sass'
 gem "haml-rails", "~> 1.0"
 
