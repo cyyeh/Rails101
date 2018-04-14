@@ -1,0 +1,24 @@
+%div.col-md-12
+  %h2.text-center 我發表過的文章
+  %table.table
+    %thead
+      %tr
+        %th Content
+        %th Group Name
+        %th Last Update
+        %th{:colspan => "2"}
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td
+            = post.content
+          %td
+            = post.group.title
+          %td
+            = post.updated_at
+          %td
+            = link_to "Edit", edit_group_post_path(post.group, post), class: "btn btn-default btn-xs"
+          %td
+            = link_to "Delete", group_post_path(post.group, post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs"
+  %div.text-center
+    = will_paginate @posts
