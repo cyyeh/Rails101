@@ -1,0 +1,11 @@
+%tr
+  %td
+    = render_post_content(post)
+  %td
+    = post.group.title
+  %td
+    = post.updated_at
+  %td
+    = link_to "Edit", edit_group_post_path(post.group, post), class: "btn btn-default btn-xs"
+  %td
+    = link_to "Delete", group_post_path(post.group, post), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs"

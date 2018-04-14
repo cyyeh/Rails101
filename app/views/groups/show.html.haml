@@ -23,17 +23,6 @@
         %th 發表者
         %th 發表時間
     %tbody
-      - @posts.each do |post|
-        %tr
-          %td
-            = render_post_content(post)
-          %td
-            = post.user.email
-          %td
-            = post.created_at
-          %td
-            - if is_current_owner_logged_in?(post)
-              = link_to "Edit", edit_group_post_path(@group, post), :class => "btn btn-sm btn-default"
-              = link_to "Delete", group_post_path(@group, post), class: "btn btn-sm btn-default", method: :delete, data: { confirm: "Are you sure?" }
+      = render :partial => "posts/post_item", :collection => @posts, :as => :post
   %div.text-center
     = will_paginate @posts

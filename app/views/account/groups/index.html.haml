@@ -8,15 +8,6 @@
         %th Post Count
         %th Last Update
     %tbody
-      - @groups.each do |group|
-        %tr
-          %td
-            = link_to group.title, group_path(group)
-          %td
-            = render_group_description(group)
-          %td
-            = group.posts.count
-          %td
-            = group.updated_at
+      = render :partial => "group_item", :collection => @groups, :as => :group
   %div.text-center
     = will_paginate @groups
