@@ -1,6 +1,7 @@
 %div.col-md-12
-  - if is_current_owner_logged_in(@group)
-    %div.group
+  %div.group
+    = link_to "Write a Post", new_group_post_path(@group), class: "btn btn-default pull-right"
+    - if is_current_owner_logged_in(@group)
       = link_to "Edit", edit_group_path(@group), class: "btn btn-primary pull-right"
   %h2
     = @group.title
