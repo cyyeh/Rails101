@@ -2,19 +2,5 @@
   %h2 編輯討論版
   %hr
 
-  - if @group.errors.any?
-    %ul
-      - @group.errors.full_messages.each do |msg|
-        %li
-          = msg
-
-  = form_for @group do |f|
-    標題
-    = f.text_field :title
-    %br
-    敘述
-    = f.text_area :description
-    %br
-
-    = f.submit "Submit", :disable_with => "Submitting..."
+  = render "form"
     
