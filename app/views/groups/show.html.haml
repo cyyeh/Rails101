@@ -7,3 +7,18 @@
     = @group.title
   %p
     = @group.description
+  %table.table
+    %thead
+      %tr
+        %th 文章內容
+        %th 發表者
+        %th 發表時間
+    %tbody
+      - @posts.each do |post|
+        %tr
+          %td
+            = post.content
+          %td
+            = post.user.email
+          %td
+            = post.created_at
