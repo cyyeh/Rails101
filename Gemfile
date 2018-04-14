@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails' # if using rails5.1+, bootstrap needs this gem
 gem 'bootstrap-sass'
 gem "haml-rails", "~> 1.0"
+gem "simple_form"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
