@@ -1,0 +1,7 @@
+%div.col-md-12
+  %div.group
+    = link_to "Edit", edit_group_path(@group), class: "btn btn-primary pull-right"
+  %h2
+    = @group.title
+  %p
+    = @group.description
