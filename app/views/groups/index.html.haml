@@ -13,7 +13,7 @@
           %td 
             = link_to group.title, group_path(group)
           %td
-            = simple_format(group.description)
+            = render_group_description(group)
           %td
             = group.user.email
           %td
