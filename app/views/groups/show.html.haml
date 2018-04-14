@@ -1,5 +1,5 @@
 %div.col-md-12
-  - if current_user && current_user == @group.user
+  - if is_current_owner_logged_in(@group)
     %div.group
       = link_to "Edit", edit_group_path(@group), class: "btn btn-primary pull-right"
   %h2
