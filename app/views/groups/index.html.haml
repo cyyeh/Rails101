@@ -1,0 +1,20 @@
+%div.col-md-12
+  %div.group
+    = link_to "New group", new_group_path, class: "btn btn-primary pull-right"
+  %table.table.table-hover
+    %thead
+      %tr
+        %td #
+        %td Title
+        %td Description
+    %tbody
+      - @groups.each do |group|
+        %tr
+          %td #
+          %td 
+            = link_to group.title, group_path(group)
+          %td
+            = group.description
+          %td
+            = link_to "Edit", edit_group_path(group), :class => "btn btn-sm btn-default"
+            = link_to "Delete", group_path(group), class: "btn btn-sm btn-default", method: :delete, data: { confirm: "Are you sure?" }
