@@ -13,7 +13,7 @@
           %td
             = link_to group.title, group_path(group)
           %td
-            = group.description
+            = simple_format(group.description)
           %td
             = group.posts.count
           %td
