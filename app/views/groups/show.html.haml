@@ -3,7 +3,8 @@
     %span
       - if is_current_user_belongs_to?(@group)
         %label.label.label-success 群組成員
-        = link_to "Quit Group", quit_group_path(@group), method: :post, class: "btn btn-default"
+        - if current_user != @group.user
+          = link_to "Quit Group", quit_group_path(@group), method: :post, class: "btn btn-default"
         = link_to "Write a Post", new_group_post_path(@group), class: "btn btn-default pull-right"
       - else
         %label.label.label-warning 不是群組成員

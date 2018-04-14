@@ -4,14 +4,12 @@
   %table.table.table-hover
     %thead
       %tr
-        %td #
         %td Title
         %td Description
         %td Creator
     %tbody
       - @groups.each do |group|
         %tr
-          %td #
           %td 
             = link_to group.title, group_path(group)
           %td
