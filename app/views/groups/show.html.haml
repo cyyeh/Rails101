@@ -3,8 +3,10 @@
     %span
       - if current_user && current_user.is_member_of?(@group)
         %label.label.label-success 群組成員
+        = link_to "Quit Group", quit_group_path(@group), method: :post, class: "btn btn-default"
       - else
         %label.label.label-warning 不是群組成員
+        = link_to "Join Group", join_group_path(@group), method: :post, class: "btn btn-default"
 
     = link_to "Write a Post", new_group_post_path(@group), class: "btn btn-default pull-right"
     - if is_current_owner_logged_in(@group)
