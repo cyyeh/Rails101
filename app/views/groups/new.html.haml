@@ -1,6 +1,13 @@
 %div.col-md-4.col-md-offset-4
   %h2 新增討論版
   %hr
+
+  - if @group.errors.any?
+    %ul
+      - @group.errors.full_messages.each do |msg|
+        %li
+          = msg
+
   = form_for @group do |f|
     標題
     = f.text_field :title
@@ -10,4 +17,3 @@
     %br
 
     = f.submit "Submit", :disable_with => "Submitting..."
-    
