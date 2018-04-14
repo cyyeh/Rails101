@@ -1,5 +1,11 @@
 %div.col-md-12
   %div.group
+    %span
+      - if current_user && current_user.is_member_of?(@group)
+        %label.label.label-success 群組成員
+      - else
+        %label.label.label-warning 不是群組成員
+
     = link_to "Write a Post", new_group_post_path(@group), class: "btn btn-default pull-right"
     - if is_current_owner_logged_in(@group)
       = link_to "Edit", edit_group_path(@group), class: "btn btn-primary pull-right"

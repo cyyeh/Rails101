@@ -5,5 +5,3 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Group.create(title: "Board 1", description: "Board 1 body")
-Group.create(title: "Board 2", description: "Board 2 body")
