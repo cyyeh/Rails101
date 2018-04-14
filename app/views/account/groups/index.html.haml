@@ -1,0 +1,22 @@
+%div.col-md-12
+  %h2.text-center 我加入的討論版
+  %table.table
+    %thead
+      %tr
+        %th Title
+        %th Description
+        %th Post Count
+        %th Last Update
+    %tbody
+      - @groups.each do |group|
+        %tr
+          %td
+            = link_to group.title, group_path(group)
+          %td
+            = group.description
+          %td
+            = group.posts.count
+          %td
+            = group.updated_at
+  %div.text-center
+    = will_paginate @groups
