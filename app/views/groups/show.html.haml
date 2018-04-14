@@ -22,3 +22,7 @@
             = post.user.email
           %td
             = post.created_at
+          %td
+            - if is_current_owner_logged_in(post)
+              = link_to "Edit", edit_group_post_path(@group, post), :class => "btn btn-sm btn-default"
+              = link_to "Delete", group_post_path(@group, post), class: "btn btn-sm btn-default", method: :delete, data: { confirm: "Are you sure?" }
